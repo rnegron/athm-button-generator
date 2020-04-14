@@ -20,7 +20,7 @@ const Form = () => {
             <div className="col-span-3 sm:col-span-2">
               <label
                 htmlFor="publicToken"
-                className="block text-sm font-medium text-gray-700 leading-5"
+                className="block text-sm font-medium leading-5 text-gray-700"
               >
                 Account number
               </label>
@@ -53,9 +53,13 @@ const Form = () => {
           <div className="mt-6">
             <label className="block mt-4">
               <span className="text-gray-700">Language</span>
-              <select className="block w-full mt-1 form-select" ref={register}>
-                <option>Spanish</option>
-                <option>English</option>
+              <select
+                name="lang"
+                className="block w-full mt-1 form-select"
+                ref={register}
+              >
+                <option value="es">Spanish</option>
+                <option value="en">English</option>
               </select>
             </label>
           </div>
@@ -63,10 +67,14 @@ const Form = () => {
           <div className="mt-6">
             <label className="block mt-4">
               <span className="text-gray-700">Theme</span>
-              <select className="block w-full mt-1 form-select" ref={register}>
-                <option>Normal</option>
-                <option>Light</option>
-                <option>Dark</option>
+              <select
+                name="theme"
+                className="block w-full mt-1 form-select"
+                ref={register}
+              >
+                <option value="btn">Normal</option>
+                <option value="btn-light">Light</option>
+                <option value="btn-dark">Dark</option>
               </select>
             </label>
           </div>
@@ -74,7 +82,7 @@ const Form = () => {
           <div className="mt-6">
             <label
               htmlFor="total"
-              className="block text-sm font-medium text-gray-700 leading-5"
+              className="block text-sm font-medium leading-5 text-gray-700"
             >
               Total
             </label>
@@ -84,6 +92,7 @@ const Form = () => {
               </div>
               <input
                 id="total"
+                name="total"
                 className="block w-full pr-12 form-input pl-7 sm:text-sm sm:leading-5"
                 placeholder="0.00"
                 ref={register}
@@ -95,13 +104,13 @@ const Form = () => {
           </div>
         </div>
       </div>
-      <div className="pt-5 mt-8 border-t border-gray-200">
+      <div className="pt-5 mt-8">
         <div className="flex justify-end">
           <span className="inline-flex rounded-md shadow-sm">
             <button
               type="button"
               onClick={() => dispatch({ type: 'RESET_FORM' })}
-              className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 leading-5 transition duration-150 ease-in-out rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
+              className="px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
             >
               Reset
             </button>
@@ -109,7 +118,7 @@ const Form = () => {
           <span className="inline-flex ml-3 rounded-md shadow-sm">
             <button
               type="submit"
-              className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent leading-5 transition duration-150 ease-in-out rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700"
+              className="inline-flex justify-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700"
             >
               Submit
             </button>

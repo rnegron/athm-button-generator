@@ -1,10 +1,13 @@
 import React, { useReducer } from 'react';
 import { AthmButtonStateContext, AthmButtonDispatchContext } from './context';
-import reducer, { initialState } from './reducer';
+import reducer, { initialButtonState } from './reducer';
 import { Form, Navbar, AthmButton } from './components';
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, {
+    showButton: false,
+    buttonState: initialButtonState,
+  });
 
   return (
     <AthmButtonDispatchContext.Provider value={{ dispatch }}>
